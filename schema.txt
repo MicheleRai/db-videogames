@@ -1,0 +1,80 @@
+Videogioco
+-ID: Int(PK)
+-Nome: Varchar(50)
+-Trama: Text
+-Data-di-rilascio: Date
+-Softwere_house_id: Int(FK)
+
+Softwere House
+-ID: Int (PK)
+-Nome: Varchar(50)
+-Partita Iva: Varchar(20)
+-Città: Varchar(100)
+-Nazione: Varchar(50)
+
+Piattaforma:
+-ID: Int (PK)
+-Nome: Varchar(50)
+
+PIVOT Videogioco_Piattaforma:
+-ID: Int (PK)
+Videogioco_id: Int
+Piattaforma_id: Int
+
+Categoria:
+-ID: Int (PK)
+-Nome: Varchar(50)
+
+PIVOT Categoria_Videogioco:
+-ID: Int (PK)
+Videogioco_id: Int(FK)
+Categoria_id: Int(FK)
+
+PEGI:
+-ID: Int (PK)
+-Nome: Varchar(50)
+
+PIVOT Pegi_Videogioco:
+-ID: Int (PK)
+Videogioco_id: Int(FK)
+PEGI_id: Int(FK)
+
+Torneo:
+-ID: Int (PK)
+-Nome: Varchar(50)
+-Inizio: Date
+-Fine: Date
+-Città: Varchar(100)
+
+PIVOT Torneo_Giocatore:
+-ID: Int (PK)
+Torneo_id: Int(FK)
+Giocatore_id: Int(FK)
+
+Giocatore:
+-ID: Int (PK)
+-Nome: Varchar(50)
+-Cognome: Varchar(50)
+-Nickname: Varchar(50)
+-Città: Varchar(100)
+
+Recensione:
+-ID: Int (PK)
+-Giocatore_id: Int (FK)
+-Videogioco_id: Int (FK)
+-Titolo: Varchar(100)
+-Commento: Text
+-Voto: TinyInt
+
+Premio:
+-ID: Int (PK)
+-Tipologia_premio: Varchar(100)
+-Descrizione: Text
+
+PIVOT Premiazione:
+-ID: Int (PK)
+-Premio_id: Int (FK)
+-Gioco_id: Int (FK)
+-Anno: Date
+
+
